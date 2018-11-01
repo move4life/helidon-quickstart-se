@@ -1,5 +1,15 @@
 build:
   box:
+   id: maven:3.5.2-jdk-8
+  
+  steps:
+    - wercker/maven:
+      goals: clean compile
+      cache_repo: true
+      version: 3.5.2
+
+build-docker-image:
+  box:
    id: alpine
 
   steps:
