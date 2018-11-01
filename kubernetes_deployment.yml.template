@@ -5,25 +5,25 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: quickstart-se
+  name: quickstart-se01
   labels:
     commit: ${WERCKER_GIT_COMMIT}
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: quickstart-se
+      app: quickstart-se01
   template:
     metadata:
       labels:
-        app: quickstart-se
+        app: quickstart-se01
         commit: ${WERCKER_GIT_COMMIT}
     spec:
       containers:
-      - name: quickstart-se
+      - name: quickstart-se01
         image: ${DOCKER_REPO}:${WERCKER_GIT_COMMIT}
         ports:
-        - name: quickstart-se
+        - name: quickstart-se01
           containerPort: 8090
           protocol: TCP
       imagePullSecrets:
